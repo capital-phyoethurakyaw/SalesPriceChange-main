@@ -1,0 +1,569 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SalePriceMaster.master.cs" Inherits="SalesPriceChange.SalePriceMaster" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+
+    <style>
+        .theme_0{
+            background: linear-gradient(to top, #337ab7 50%, black 50%);
+        }
+        .theme_1{
+               background: linear-gradient(to top, #aa6548 50%, #0b49b5 50%);
+        }
+        .theme_2{
+                background: linear-gradient(to top, #6c71e6 50%, #337ab7 50%);
+        }
+        .theme_3{
+               background: linear-gradient(to top, #441578 50%, #873030 50%);
+        }
+        .theme_4{   
+               background: linear-gradient(to top, #36489c 50%, #804c5b 50%);
+        }
+        .theme_5{   
+               background: linear-gradient(to top, #831a30 50%, #1a684c 50%);
+        }
+        .theme_6{  
+               background: linear-gradient(to top, #169da9 50%, #503c31 50%);
+
+        }
+
+    </style>
+     <style>
+          /*
+look at the weird glitch on the 6th button. something to do with color vs background-color. or did i fuck up?
+*/
+
+body {
+  font-family:'Helvetica', sans-serif; 
+}
+
+
+/* Button 0 */
+
+
+.button-wrap {
+  width: 160px;
+  margin: 40px auto 0;
+  cursor: pointer;
+}
+.button-bg {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  border-radius: 40px;
+  padding: 3px;
+  color:#fff;
+  transition:all 0.2s ease;
+}
+.button-switch {
+  position:relative;
+  left:0px;
+  width: 74px;
+  height: 74px;
+  border:solid 22px;
+  border-radius: 36px;
+  transition:all 0.2s ease;
+}
+.button-active .button-switch { left:80px; }
+.button-on, 
+.button-off {
+  position:absolute; 
+  transition:all 0.2s ease;
+  padding-top:15px;
+  font-size:2.4em;
+  font-weight:bold;
+}
+.button-on { margin-left:110px; }
+.button-off { margin-left:30px; color:#dd2222; }
+.button-active .button-off { color:#fff; }
+.button-active .button-on { color:#22dd22; }
+.button-active .button-bg { background-color:#000; }
+
+
+/* BUTTON 1 */
+
+/* BUTTON 4 */
+
+
+.four .button-wrap {
+  width: 85px;
+  height:30px;
+  margin: 40px auto 0;
+  cursor: pointer;
+}
+.four .button-bg {
+  width: 100%;
+  height: 100%;
+  background-color: #bb2222;
+  border-radius: 20px;
+  padding: 3px;
+  color:#fff;
+  transition:all 0.2s ease;
+  border:2px solid white;
+}
+.four .button-switch {
+  position:relative;
+  left:0px;
+    width: 30px;
+    margin-top: -5px;
+    height: 30px;
+  border:solid 13px;
+  background-color:#fff;
+  border-radius: 36px;
+  transition:all 0.2s ease;
+}
+.four .button-active .button-switch { left:50px; }
+.four .button-in, 
+.four .button-out {
+  position:absolute; 
+  transition:all 0.2s ease;
+  padding-top:15px;
+  font-size:0.8em;
+  text-transform:uppercase;
+  font-weight:bold;
+}
+.four .button-in { margin-left:76px; }
+.four .button-out { margin-left:18px; }
+.four .button-active .button-out {  }
+.four .button-active .button-in {  }
+.four .button-active .button-bg { background-color:#22bb22; }
+
+
+      </style>
+            <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <%--<meta http-equiv="refresh" content="1"  runat="server" />--%>
+    <link id="MyStyleSheet" rel="stylesheet" type="text/css" runat="server" />
+    <link href="Styles/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <base target="_parent"/>
+    <link id="Link1" rel="icon" href="~/img/now.png"  runat="server" style="width:30px;height:30px; border-radius:10px; "  />
+    <script src="Scripts/chosen.jquery.js"></script>
+    <script src="Scripts/Jquery.js"></script>
+    <title runat="server" id="a"> @Page.Title
+    </title>
+    <link type="text/css" href="Styles/bootstrap.min.css" rel="stylesheet"  /> 
+    <link type="text/css" href="Styles/font-awesome.css" rel="stylesheet" />
+    <link type="text/css" href="Styles/Common.css" rel="stylesheet" /> 
+    <link href="Styles/bootstrap-datetimepicker.min.css" rel="stylesheet"  />
+ <%-- <script>
+
+      $('html').bind('keypress', function (e) {
+          if (e.keyCode == 13) {
+              return false;
+          }
+          if (window.event.keyCode == 13)
+              return false;
+      });
+        </script>
+    <script>
+        $(document).ready(function () {
+            $('.js-activated').dropdownHover().dropdown();         
+        });    
+    </script>--%>
+
+    <style type="text/css">
+   
+    
+        body.page.page-id-195 .hentry .title-post {
+        color: red;
+
+        }
+          
+@media screen and (min-width : 750px) {
+#content{float:left;width:60%;}
+#sidebar{float:right;width:35%}
+} 
+ 
+@media screen and (min-width : 481px) and (max-width : 749px) {
+#content{width:95%;}
+#sidebar{width:95%;}    
+}
+    </style>
+      <script>
+          $(document).ready(function () {
+
+              function pageLoad() {
+                  $('.form_date').datetimepicker({
+
+                      todayBtn: 1,
+                  })
+              }
+
+          })
+    </script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1990 12:00:00 GMT" />
+    <asp:ContentPlaceHolder ID="head" runat="server" ClientIDMode="Static">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1"  runat="server" >
+        <cc1:ToolkitScriptManager EnablePageMethods="true" EnablePartialRendering="true" AsyncPostBackTimeout="60000" ID="ToolkitScriptManager1" runat="server"></cc1:ToolkitScriptManager>
+        <div class="navbar-fixed-top">
+
+        <!----navbar----------------->
+            <nav class="navbar-inverse navbar" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+              <%--  <div class="navbar-header">
+                  
+                </div>--%>
+                <div class="navbar-header"> 
+                    <asp:Label ID="Label1" runat="server" CssClass="navbar-brand" ForeColor="#00ff00" > Capital Sports <br /> <i style="font-weight:100; font-size:10px;color:pink ">Version 1.8</i></asp:Label> 
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">CapitalSports </span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                 
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li runat="server" id="home" style="display:none">    
+                        <a href="<%= Page.ResolveUrl("~/Dash_board.aspx")%>" title="ホーム">
+                            <span class="glyphicon glyphicon glyphicon-home" style="color:#00ff00"></span>
+                            <asp:Label runat="server" ID="lblHome" CssClass="menuColor" Text="ホーム"></asp:Label>
+                        </a>
+                    </li>
+                    <li runat="server" id="instruction_cate" style="display:none" class="dropdown">
+                        <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" data-hover="dropdown"  data-close-others="false" title="申請番号管理表">
+                            <span class="glyphicon glyphicon-list-alt menuColor" style="color:#00ff00"></span> 
+                            <asp:Label runat="server" ID="Label2" CssClass="menuColor" Text="申請番号管理表"></asp:Label>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li runat="server" id="instruction_list" style="display:none">
+                                <a href="<%= Page.ResolveUrl("~/Instructions/Instruction_List.aspx")%>" title="指示書一覧">
+                                    <span class="glyphicon glyphicon-triangle-right" style="color:#00ff00"></span>
+                                    <asp:Label ID="Label15" runat="server"  Text="指示書一覧"></asp:Label>
+                                </a>
+                            </li>                                                    
+                            <li runat="server" id="instruction" style="display:none">
+                                <a href="<%= Page.ResolveUrl("~/Instructions/Instructions.aspx")%>" title="指示書新規作成">
+                                    <span class="glyphicon glyphicon-triangle-right"style="color:#00ff00" ></span>
+                                    <asp:Label ID="Label24" runat="server" Text="指示書新規作成" ></asp:Label>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li runat="server" id="MD_manage" style="display:none" class="dropdown">
+                        <a href="<%= Page.ResolveUrl("~/MDManagement/MDManagement.aspx")%>"  title="ＭＤ_管理表">
+                            <span class="glyphicon glyphicon-file menuColor" style="color:#00ff00"></span>
+                            <asp:Label runat="server" ID="Label3" CssClass="menuColor" Text="ＭＤ管理表"></asp:Label> 
+                        </a>
+                    </li>
+                    <li runat="server" id="supply_control" style="display:none">
+                        <a href="<%= Page.ResolveUrl("~/Supplementary_Control/Supplementary_Control.aspx")%>" title="補填管理表">
+                            <span class="glyphicon glyphicon-list menuColor" style="color:#00ff00"></span>
+                            <asp:Label runat="server" ID="Label6" CssClass="menuColor" Text="補填管理表"></asp:Label>
+                        </a>
+                    </li>
+                    <li runat="server" id="manage_screen" class="dropdown" style="display:none">
+                        <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" data-hover="dropdown"  data-close-others="false" title="管理画面">
+                            <span class="glyphicon glyphicon-tasks menuColor" style="color:#00ff00"></span> 
+                            <asp:Label runat="server" ID="Label5" CssClass="menuColor" Text="管理画面"></asp:Label>         
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li runat="server" id="apply_type" style="display:none" >
+                                <a href="<%= Page.ResolveUrl("~/Setting/ApplyType_Entry.aspx")%>" title="申請区分">
+                                    <span class="glyphicon glyphicon-triangle-right" style="color:#00ff00"></span>
+                                    <asp:Label ID="Label4" ToolTip="Applytype" runat="server" Text="申請区分"></asp:Label>
+                                </a>
+                            </li>
+                            <li runat="server" id="suppliers_entry" style="display:none">
+                                <a href="<%= Page.ResolveUrl("~/Setting/Suppliers_Entry.aspx")%>" title="仕入先">
+                                    <span class="glyphicon glyphicon-triangle-right" style="color:#00ff00" ></span>
+                                    <asp:Label ID="Label7" runat="server" ToolTip="Supplier" Text="仕入先" ></asp:Label>
+                                </a>
+                            </li>
+                            <li runat="server" id="brand_entry" style="display:none">
+                                <a href="<%= Page.ResolveUrl("~/Setting/Brand_Entry.aspx")%>" title="ブランド">
+                                    <span class="glyphicon glyphicon-triangle-right" style="color:#00ff00"></span>
+                                    <asp:Label ID="Label8" runat="server" ToolTip="Brand" Text="ブランド"></asp:Label>
+                                </a>
+                            </li>        
+                            <li runat="server" id="cost_unit" style="display:none">
+                                <a href="<%= Page.ResolveUrl("~/Setting/Cost_Unit.aspx")%>" title="原価単位">
+                                    <span class="glyphicon glyphicon-triangle-right"style="color:#00ff00" ></span>
+                                    <asp:Label ID="Label9" runat="server" ToolTip="CostUnit" Text="原価単位" ></asp:Label>
+                                </a>
+                            </li>
+                            <li runat="server" id="selling_price" style="display:none">
+                                <a href="<%= Page.ResolveUrl("~/Setting/Selling_Price Unit.aspx")%>" title="売価単位">
+                                    <span class="glyphicon glyphicon-triangle-right" style="color:#00ff00" ></span>
+                                    <asp:Label ID="Label10" runat="server" ToolTip="Selling Price Unit" Text="売価単位" ></asp:Label>
+                                </a>
+                            </li>
+                            <li runat="server" id="special_price" style="display:none">
+                                <a href="<%= Page.ResolveUrl("~/Setting/SpecialPrice_Type_Entry.aspx")%>" title="特記フラグ">
+                                    <span class="glyphicon glyphicon-triangle-right" style="color:#00ff00"></span>
+                                    <asp:Label ID="Label11" runat="server" ToolTip="Special Price" Text="特記フラグ"></asp:Label>
+                                </a>
+                            </li>
+                            <li runat="server" id="inventory_type" style="display:none">
+                                <a href="<%= Page.ResolveUrl("~/Setting/Inventory_Type.aspx")%>" title="在庫フラグ">
+                                    <span class="glyphicon glyphicon-triangle-right" style="color:#00ff00"></span>
+                                    <asp:Label ID="Label12" runat="server" ToolTip="Inventory" Text="在庫フラグ"></asp:Label>
+                                </a>
+                            </li>
+                            <li runat="server" id="users_list" style="display:none">
+                                <a href="<%= Page.ResolveUrl("~/Setting/Users_List.aspx")%>" title="ユーザー一覧">
+                                    <span class="glyphicon glyphicon-triangle-right" style="color:#00ff00"></span>
+                                    <asp:Label ID="Label13" runat="server" ToolTip="UserList" Text="ユーザー一覧" ></asp:Label>
+                                </a>
+                            </li>
+                            <li runat="server" id="users_entry" style="display:none">
+                                <a href="<%= Page.ResolveUrl("~/Users/UserEntry.aspx")%>" title="ユーザー作成">
+                                    <span class="glyphicon glyphicon-triangle-right" style="color:#00ff00"></span>
+                                    <asp:Label ID="Label14" runat="server" ToolTip="UserEntry" Text="ユーザー作成"></asp:Label>
+                                </a>
+                            </li>
+                            <li runat="server" id="category_entry" style="display:none">
+                                <a href="<%= Page.ResolveUrl("~/Setting/Category_Entry.aspx")%>" title="カテゴリエントリ">
+                                    <span class="glyphicon glyphicon-triangle-right" style="color:#00ff00"></span>
+                                    <asp:Label ID="Label16" runat="server" ToolTip="Category_Entry" Text="カテゴリエントリ"></asp:Label>
+                                </a>
+                            </li>
+                        </ul> 
+                    </li>
+                    <li runat="server" id="about" style="display:block">    
+                        <a href="<%= Page.ResolveUrl("~/About.aspx")%>" title="About">
+                            <span class="	glyphicon glyphicon-question-sign" style="color:#00ff00"></span>
+                            <asp:Label runat="server" ID="Label18" CssClass="menuColor" Text="About"></asp:Label>
+                        </a>
+                    </li>
+                    <li  runat="server" id="chat" style="display: none">
+                          <a href="<%= Page.ResolveUrl("~/chat.aspx")%>" title="chat">
+                            <span class="	glyphicon glyphicon-question-sign" style="color:#00ff00"></span>
+                            <asp:Label runat="server" ID="Label20" CssClass="menuColor" Text="chat"></asp:Label>
+                        </a>
+
+
+                    </li >
+
+
+                       <li runat="server" id="Li1" class="dropdown"  visible="false">
+                        <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" data-hover="dropdown"  data-close-others="false" title="Theme">
+                            <span class="glyphicon glyphicon-tasks menuColor" style="color:#00ff00"></span> 
+                            <asp:Label runat="server" ID="Label22" CssClass="menuColor" Text="Theme"></asp:Label>         
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                      
+                              <li runat="server" id="Li2" >
+                                 <a id="A7"  runat="server" onserverclick="theme_1">
+                            
+                                    <asp:Label ID="Label23"  runat="server" Text="Theme1"></asp:Label>
+                                             <span class="glyphicon glyphicon-triangle-right" style="color:#00ff00"></span>
+                                </a>
+                                </li>
+                               <li runat="server" id="Li3" >
+                                    <a id="A8" runat="server" onserverclick="theme_2">
+                                
+                                    <asp:Label ID="Label25"  runat="server" Text="Theme2"></asp:Label>
+                                            <span class="glyphicon glyphicon-triangle-right" style="color:#00ff00"></span>
+                                </a>
+                                </li>
+                               <li runat="server" id="Li4" >
+                                    <a id="A1"  runat="server" onserverclick="theme_3">
+                                
+                                    <asp:Label ID="Label26"  runat="server" Text="Theme3"></asp:Label>
+                                            <span class="glyphicon glyphicon-triangle-right" style="color:#00ff00"></span>
+                                </a>
+                                </li>
+                            <li runat="server" id="Li5" >
+                                    <a id="A3"  runat="server" onserverclick="theme_4">
+                             
+                                    <asp:Label ID="Label27"  runat="server" Text="Theme4"></asp:Label>
+                                               <span class="glyphicon glyphicon-triangle-right" style="color:#00ff00"></span>
+                                </a>
+                                </li>
+                            <li runat="server" id="Li6" >
+                                    <a id="A4"  runat="server" onserverclick="theme_5">
+                                
+                                    <asp:Label ID="Label28"  runat="server" Text="Theme5"></asp:Label>
+                                            <span class="glyphicon glyphicon-triangle-right" style="color:#00ff00"></span>
+                                </a>
+                                </li>
+                            <li runat="server" id="Li7" >
+                                    <a id="A5"  runat="server" onserverclick="theme_6">
+                                  
+                                    <asp:Label ID="Label29" runat="server" Text="Theme6"></asp:Label>
+                                          <span class="glyphicon glyphicon-triangle-right" style="color:#00ff00"></span>
+                                </a>
+                                </li>
+                                
+                            <li>
+                                <a id="A6" runat="server" onserverclick="theme_original">
+                                
+                                    <asp:Label ID="Label30"  runat="server" Text="Theme Original"></asp:Label>
+                                            <span class="glyphicon glyphicon-triangle-right" style="color:#00ff00"></span>
+                                </a>
+                            </li>
+
+                            </ul>
+                           </li>
+
+
+                    <li style=" padding-left: 50px; vertical-align:middle" >
+                        
+                        <div style="vertical-align:middle !important;"  runat="server" title="Theme setting">
+                           <%-- <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" data-hover="dropdown"  data-close-others="false" title="Theme">
+                            <span class="fas fa-palette" style="color:#00ff00"></span> 
+                            <asp:Label runat="server" ID="Label31" CssClass="menuColor" Text="Theme"></asp:Label>         
+                        </a>--%>
+                 <button runat="server" style="visibility:hidden" id="hdb_btn" onserverclick="change_backtheme" ></button>
+                                               <div class="four" style="margin-top:-48px" onclick="theme(this,1)" >
+                             <div runat="server" id="btnb_wrp" class="button-wrap" >
+                               <div runat="server" id="bg_theme" class="button-bg">
+                                 <div class="button-out"></div>
+                                 <div class="button-in"></div>
+                                 <div class="button-switch"></div>
+                               </div>
+                             </div>
+                           </div>
+                            </div>
+                              </li>
+                               <script>
+                                   $('.button-wrap').on("click", function () {
+                                       $(this).toggleClass('button-active');
+                                   });
+                              </script>
+                 
+
+                    <li  runat="server" id="msg" style="display:none">
+                          <a href="<%= Page.ResolveUrl("~/msg.aspx")%>" title="message">
+                            <span class="	glyphicon glyphicon-question-sign" style="color:#00ff00"></span>
+                            <asp:Label runat="server" ID="Label21" CssClass="menuColor" Text="msg"></asp:Label>
+                        </a>
+                    </li>
+                </ul> 
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="toblock" runat="server" style="display:block">
+                        <a href="#" id="menuitems" class="dfropdown-toggle"  data-toggle="dropdown" data-close-others="false">
+                            <span class="glyphicon glyphicon-globe" style="font-size:20px;color:#00ff00""></span>      
+                            <span class=" badge badge-notify">
+                                <asp:UpdatePanel ID="up1" runat="server" UpdateMode="Always">
+                                    <ContentTemplate>
+                                        <asp:Label runat="server" ID="lblNoti" ClientIDMode="Static"></asp:Label>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" style="background-color:#F5F5F5">
+                            <li style="text-align:center; height:40px; line-height:40px; background-color:#F5F5F5; margin-top:-5px; border-radius:8px; color:#F5F5F5;" > 
+                                <div id="Div1" runat="server" style="height:40px; width:200px; background-color:#337AB7; margin-left:30%; border-radius:20px;">
+                                    <b>Notification</b>
+                                </div>
+
+            </li>
+            <li style="display:block !important; ">
+                <div id="notificationsBody1"  style="height:215px;width:550px; overflow:auto; text-align:left; border-radius:8px">
+                    
+                <asp:UpdatePanel ID="up2" runat="server" UpdateMode="Conditional">
+                               <Triggers >
+                                  <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" runat="server"  />
+                                  
+                              </Triggers>
+                                               <ContentTemplate>
+                        <asp:Timer ID="Timer1" runat="server" Interval="60000" ontick="Timer1_Tick"></asp:Timer>
+                            <asp:Gridview ID="gvTestNoti"  runat="server" PagerStyle-CssClass="pager"  HeaderStyle-CssClass="header" AutoGenerateColumns="false" RowStyle-CssClass="fgh"
+		                        Width="100%" Height="100%" ShowHeader="false" GridLines="none" BackColor="white" AlternatingRowStyle-CssClass="jkl" AlternatingRowStyle-BorderStyle="Solid" AlternatingRowStyle-BorderColor="#DBE5F6"   RowStyle-Height="40px" OnRowDataBound="gvTestNoti_RowDataBound">
+		                   
+                           <%--BackColor="white"   AlternatingRowStyle-BackColor="#DBE5F6"--%> 
+                                    <Columns >
+                                    
+				                    <asp:TemplateField HeaderStyle-CssClass="displaynone" ItemStyle-CssClass="displaynone">
+
+				                        <HeaderTemplate >ID</HeaderTemplate>
+				                        <ItemTemplate >
+					                        <asp:Label runat="server" width="100px" ID="lblNotiID"   Text='<%# Bind("ID") %>' ></asp:Label>
+				                        </ItemTemplate>
+		                            </asp:TemplateField>
+                                          <asp:TemplateField>
+				                        <HeaderTemplate >Updated_Date</HeaderTemplate>
+				                        <ItemTemplate >
+					                        <asp:Label runat="server" width="100px" ID="lblupdated_date"   Text='<%# Bind("Updated_Date") %>' ></asp:Label>
+				                        </ItemTemplate>
+		                            </asp:TemplateField>
+                                      <asp:TemplateField  ControlStyle-Width="300px"  ItemStyle-CssClass="new_left_col" >
+				                        <HeaderTemplate >Stage</HeaderTemplate>
+				                        <ItemTemplate>
+					                        <asp:Label runat="server" width="300px" ID="lblStage"  Text='<%# Bind("Stage") %>' ></asp:Label>
+				                        </ItemTemplate>
+		                            </asp:TemplateField>
+		                            <asp:TemplateField  ItemStyle-CssClass="new_right_col" ControlStyle-Width="90px" ItemStyle-HorizontalAlign="Center" >
+			                            <HeaderTemplate >FormID</HeaderTemplate>
+				                        <ItemTemplate >         
+                                            <asp:HyperLink runat="server" ID="lnkFormID" Text='<%# Bind("FormNo")%>' Target="_self"></asp:HyperLink>
+                                           <%--  <asp:Label runat="server" width="100px" ID="lblFormNo"  Text='<%# Bind("FormNo") %>' ></asp:Label>--%>
+				                        </ItemTemplate>
+		                            </asp:TemplateField>
+                                    
+		                        </Columns> 
+	                        </asp:Gridview>
+                        </ContentTemplate>
+                </asp:UpdatePanel>
+                   </div>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">
+          <span class="glyphicon glyphicon glyphicon-user menuColor" style="color:#00ff00" ></span> 
+           <asp:Label runat="server" ID="lblID" CssClass="displaynone"></asp:Label>
+          <asp:Label runat="server" ID="lblUserID" Text="User" CssClass="menuColor"></asp:Label>
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a id="A2" runat="server" onServerClick="Setting_Click"><span class="glyphicon glyphicon-wrench" style="padding-right:4px;color:#00ff00"></span><asp:Label ID="Label17" runat="server" ToolTip="Setting" Text="設定" ></asp:Label></a></li>
+            <li><a id="A9" runat="server" onServerClick="Logout_Click"><span class="glyphicon glyphicon-log-out" style="padding-right:4px;color:#00ff00"" ></span><asp:Label ID="Label19" runat="server" ToolTip="Logout" Text="ログアウト" ></asp:Label></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</div>
+  <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/jquery-3.2.0.min.js") %>"></script> 
+    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/bootstrap.min.js") %>"></script> 
+    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/bootstrap-hover-dropdown.js") %>"></script> 
+    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/bootstrap-datetimepicker.js") %>"></script>
+    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/bootstrap-datetimepicker.fr.js") %>"></script>
+            <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/Scripts/jquery-1.8.3.min.js") %>"></script>
+        
+    <script>
+
+
+        // here to retrieve the value of toggle switch insdide gv
+        function theme(e, val) {
+            var btn = document.getElementById("hdb_btn");
+            btn.click();
+        }
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+        </script>
+
+        <div style="padding-top:50px;">
+           
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+                
+        </div>
+    </form>
+  
+ 
+
+     
+                  
+</body>
+</html>

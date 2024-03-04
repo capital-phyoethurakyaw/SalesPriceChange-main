@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SalesPriceChange.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style type="text/css">
+    #notification_Count {
+    	padding: 3px 7px 3px 7px;
+    	background: red;
+    	color: #ffffff;
+    	font-weight: bold;
+    	margin-left: 102px;
+    	border-radius: 9px;
+    	position: absolute;
+    	margin-top: -16px;
+    	font-size: 11px;
+    }
+    </style>
+
+    
+
+    <script type="text/javascript" >
+        $(document).ready(function () {
+            $("#notification_Link").click(function () {
+                $("#notification_Wrapper").fadeToggle(300);
+                return false;
+            });
+
+            
+            $(document).click(function () {
+                $("#notification_Wrapper").hide();
+            });
+            
+            $("#notification_Wrapper").click(function () {
+                return false
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            
+
+    <ul id="nav">
+    <li><a href="#">Link</a></li>
+    <li><a href="#">Link</a></li>
+    <li>
+      <asp:ScriptManager runat="server" ID="sm1"></asp:ScriptManager>
+    <asp:UpdatePanel runat="server" ID="up1">
+    <ContentTemplate>
+    <span id="notification_Count">3</span>
+    <asp:LinkButton runat="server" OnClick="notiLinkButton_Click" Text = "Notification"></asp:LinkButton>
+    <div id="notification_Wrapper" runat="server" visible="false">
+    <div id="notificationTitle">Notifications</div>
+    <div id="notificationsBody" class="notifications">
+    </div>
+    <div id="notificationFooter"><a href="#">See All</a></div>
+    </div>
+    </ContentTemplate>
+    </asp:UpdatePanel>
+    </li>
+    <li><a href="#">Link</a></li>
+    </ul>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>

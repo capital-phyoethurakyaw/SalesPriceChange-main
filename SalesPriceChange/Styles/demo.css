@@ -1,0 +1,130 @@
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html { font-size: 100%; padding: 0; margin: 0; height: 100%;}
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+
+a {
+	text-decoration: none;
+}
+
+nav.effects{
+	margin:0px;
+}
+
+nav.effects ul{
+	margin: 0px 0px;
+	padding: 0px 0px;
+	text-align: center;
+}
+
+nav.effects ul li{
+	display: inline;
+	margin: 10px 10px;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+nav.effects ul li a{
+	border: 2px solid #fff;
+	padding: 10px 20px;
+	color: #fff;
+
+}
+
+nav.effects ul li a:hover{
+	border: 2px solid #fff;
+}
+
+
+
+/* Menu style */
+
+ul.wtf-menu{
+	margin:0px auto 0px;
+	padding: 0px 10px;
+	width: 100%;
+	background: #fff;
+	height: 50px;
+	font-size: 14px;
+	
+	/* 	Dropdown shadow */
+	-webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.3);
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.3);
+}
+
+ul.wtf-menu li{
+	list-style: none;
+	float: left;
+	padding: 0px 0px;
+	margin: 0px 0px;
+	line-height: 50px;
+	display: block;
+	position: relative;
+	text-transform: uppercase;
+}
+
+ul.wtf-menu li a{
+	color: #777;
+	padding: 0px 15px;
+	margin: 0px 0px;
+	display: block;
+}
+
+ul.wtf-menu li a:hover{
+	color:#06BA6D;
+	background:#126e82;
+}
+
+.wtf-menu ul.submenu{
+	width: 180px;
+	padding: 0px 0px;
+	margin: 0px;
+	background: #fff;
+	position: absolute;
+	top:50px;
+	left:0px;
+	display:none;
+	
+	/* 	Dropdown shadow */
+	-webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.3);
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.3);
+}
+
+.wtf-menu ul.submenu ul{
+	left: 180px;
+	top:0px;
+}
+
+.wtf-menu ul.submenu li{
+	padding: 0px;
+	margin: 0px;
+	display: block;
+	float: none;
+	border-bottom: 1px solid #eee;
+	line-height: 40px;
+	text-transform: none;
+}
+
+.wtf-menu ul.submenu li:last-child{
+	border: none;
+}
+
+
+/* Menu-2 */
+
+.menu-2 .wtf-menu li:hover > ul{
+	display:block;
+	-moz-animation: fadeInDown .3s ease-in ;
+    -webkit-animation: fadeInDown .3s ease-in ;
+    animation:fadeInDown .3s ease-in ;
+}
+
+.menu-2 .wtf-menu ul li:hover > ul{
+	display:block;
+	-moz-animation: fadeInLeft .3s ease-in ;
+    -webkit-animation: fadeInLeft .3s ease-in ;
+    animation:fadeInLeft .3s ease-in ;
+}
+

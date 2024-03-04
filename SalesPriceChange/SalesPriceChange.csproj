@@ -1,0 +1,989 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{013DA0F1-D7A0-40D4-AB05-61002DCA7997}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SalesPrice</RootNamespace>
+    <AssemblyName>SalesPriceChange</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.10618.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll_File\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="DropDownListChosen">
+      <HintPath>dll_File\DropDownListChosen.dll</HintPath>
+    </Reference>
+    <Reference Include="Mail, Version=3.0.17233.1428, Culture=neutral, PublicKeyToken=6dc438ab78a525b3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Phyoe Thura Kyaw\Desktop\Mail\Redistributables\Net45\Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="MailBrowserControl, Version=3.0.17233.1428, Culture=neutral, PublicKeyToken=6dc438ab78a525b3, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Phyoe Thura Kyaw\Desktop\Mail\Redistributables\Net45\MailBrowserControl\x86\MailBrowserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="ProtocolEx, Version=1.0.4621.33154, Culture=neutral, PublicKeyToken=6dc438ab78a525b3, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Phyoe Thura Kyaw\Desktop\Mail\Redistributables\Net45\MailBrowserControl\x86\ProtocolEx.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll_File\System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll_File\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="BigMap.aspx" />
+    <Content Include="Chat.aspx" />
+    <Content Include="Checking_Log.aspx" />
+    <Content Include="Content\chosen-sprite%402x.png" />
+    <Content Include="Content\chosen-sprite.png" />
+    <Content Include="Content\chosen.css" />
+    <Content Include="Dashboard3.aspx" />
+    <Content Include="Dash_board.aspx" />
+    <Content Include="DatePicker.ascx" />
+    <Content Include="DatePickerChange.ascx" />
+    <Content Include="DatePickerStage.aspx" />
+    <Content Include="Datepicker_Test.aspx" />
+    <Content Include="dll_File\AjaxControlToolkit.dll" />
+    <Content Include="dll_File\Mail.dll" />
+    <Content Include="dll_File\MailBrowserControl.dll" />
+    <Content Include="dll_File\ProtocolEx.dll" />
+    <Content Include="dll_File\System.Drawing.dll" />
+    <Content Include="dll_File\System.Web.dll" />
+    <Content Include="Down\plus.png" />
+    <Content Include="Down\SalesPriceChange.txt" />
+    <Content Include="Down\Table.sql" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\11140079_1632197250333718_8925207411363483344_n.jpg" />
+    <Content Include="Images\1234.png" />
+    <Content Include="Images\33443.png" />
+    <Content Include="Images\arrow.png" />
+    <Content Include="Images\back1.jpg" />
+    <Content Include="Images\backa.jpg" />
+    <Content Include="Images\backb.jpg" />
+    <Content Include="Images\backc.jpg" />
+    <Content Include="Images\backd.png" />
+    <Content Include="Images\backe.png" />
+    <Content Include="Images\bg3.jpg" />
+    <Content Include="Images\bg4.png" />
+    <Content Include="Images\bg5.png" />
+    <Content Include="Images\bgbg.jpg" />
+    <Content Include="Images\cldLogo.png" />
+    <Content Include="Images\cldMini.PNG" />
+    <Content Include="Images\delCld.PNG" />
+    <Content Include="Images\delCldar.PNG" />
+    <Content Include="Images\downloadgg.png" />
+    <Content Include="Images\bgSalePrice.jpg" />
+    <Content Include="Images\gearteeth.png" />
+    <Content Include="Images\gm.png" />
+    <Content Include="Images\gm1.png" />
+    <Content Include="Images\insert.png" />
+    <Content Include="Images\insert3.png" />
+    <Content Include="Images\insert4.png" />
+    <Content Include="Images\lg1.png" />
+    <Content Include="Images\lg2.png" />
+    <Content Include="Images\logout.png" />
+    <Content Include="Images\Noti.jpg" />
+    <Content Include="Images\NotiHead.png" />
+    <Content Include="Images\Sale.PNG" />
+    <Content Include="Images\save_button.png" />
+    <Content Include="Images\uY22qZz.jpg" />
+    <Content Include="img\calendar-blue.gif" />
+    <Content Include="img\calendar-green.gif" />
+    <Content Include="img\calendar.gif" />
+    <Content Include="img\floor3.png" />
+    <Content Include="img\head.PNG" />
+    <Content Include="img\icn1.png" />
+    <Content Include="img\icn2.png" />
+    <Content Include="img\icn3.png" />
+    <Content Include="img\minus.png" />
+    <Content Include="img\now.png" />
+    <Content Include="img\plus.png" />
+    <Content Include="Instructions\Dev_Spc.aspx" />
+    <Content Include="Instructions\Instructions.aspx" />
+    <Content Include="Instructions\Instruction_List.aspx" />
+    <Content Include="Instructions\Smart_Spc.aspx" />
+    <Content Include="Instructions\Test.aspx" />
+    <Content Include="IntegerTextbox.ascx" />
+    <Content Include="JQuery_DatePicker.ascx" />
+    <Content Include="Login\Admin.aspx" />
+    <Content Include="Login\Login.aspx" />
+    <Content Include="Login\login_testing.aspx" />
+    <Content Include="MDManagement\MDManagement.aspx" />
+    <Content Include="MDManagement\MDManagement_Entry.aspx" />
+    <Content Include="Mobile_Table.aspx" />
+    <Content Include="Mobile_Template.aspx" />
+    <Content Include="msg.aspx" />
+    <Content Include="Retrieving_Users.aspx" />
+    <Content Include="Salesmenus.aspx" />
+    <Content Include="SalesPrice\SalePriceChange.aspx" />
+    <Content Include="SalesPrice\SalesPriceChange.aspx" />
+    <Content Include="SalesPrice\SalesPrice_Change.aspx" />
+    <Content Include="SalesPrice\SalesPrice_Entry.aspx" />
+    <Content Include="SalesPrice\SalesPrice_List.aspx" />
+    <Content Include="SalesPrice\StagesSetting.aspx" />
+    <Content Include="SalesPrice\Stage_Setting.aspx" />
+    <Content Include="SalesPrice\SalePriceList.aspx" />
+    <Content Include="Scripts\3.js" />
+    <Content Include="Scripts\321.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.fr.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\bootstrap-hover-dropdown.js" />
+    <Content Include="Scripts\bootstrap-hover-dropdown.min.js" />
+    <Content Include="Scripts\bootstrap-toggle.js" />
+    <Content Include="Scripts\bootstrap-toggle.min.js" />
+    <Content Include="Scripts\Bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap2-toggle.js" />
+    <Content Include="Scripts\bootstrap2-toggle.min.js" />
+    <Content Include="Scripts\chosen.jquery.js" />
+    <Content Include="Scripts\Dropdown.js" />
+    <Content Include="Scripts\flink.js" />
+    <Content Include="Scripts\jmjs.js" />
+    <Content Include="Scripts\jquery-1.8.3.min.js" />
+    <Content Include="Scripts\jquery-3.2.0.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\jquery.datepick.js" />
+    <Content Include="Scripts\Jquery.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.mini.js" />
+    <Content Include="Scripts\jquery.numberformatter.js" />
+    <Content Include="Scripts\jquery.plugin.min.js" />
+    <Content Include="Scripts\jquerybs.min.js" />
+    <Content Include="Scripts\jsDraw2D.js" />
+    <Content Include="Scripts\jsDraw2D_Uncompressed.js" />
+    <Content Include="Scripts\skype_uri.js" />
+    <Content Include="Setting\ApplyType_Entry.aspx" />
+    <Content Include="Setting\Brand_Entry.aspx" />
+    <Content Include="Setting\Category_Entry.aspx" />
+    <Content Include="Setting\Cost_Unit.aspx" />
+    <Content Include="Setting\Inventory_Type.aspx" />
+    <Content Include="Setting\Selling_Price Unit.aspx" />
+    <Content Include="Setting\SpecialPrice_Type_Entry.aspx" />
+    <Content Include="Setting\Suppliers_Entry.aspx" />
+    <Content Include="Setting\Users_Entry.aspx" />
+    <Content Include="Setting\Users_List.aspx" />
+    <Content Include="Sheet_Style\0.css" />
+    <Content Include="Sheet_Style\1.css" />
+    <Content Include="Sheet_Style\2.css" />
+    <Content Include="Sheet_Style\3.css" />
+    <Content Include="Sheet_Style\4.css" />
+    <Content Include="Sheet_Style\5.css" />
+    <Content Include="Sheet_Style\6.css" />
+    <Content Include="Sheet_Style\7.css" />
+    <Content Include="Sheet_Style\8.css" />
+    <Content Include="Styles\2.css" />
+    <Content Include="Styles\animate.css" />
+    <Content Include="Styles\bootstrap-datetimepicker.css" />
+    <Content Include="Styles\bootstrap-datetimepicker.min.css" />
+    <Content Include="Styles\bootstrap-theme.css" />
+    <Content Include="Styles\bootstrap-theme.min.css" />
+    <Content Include="Styles\bootstrap-toggle.css" />
+    <Content Include="Styles\bootstrap-toggle.min.css" />
+    <Content Include="Styles\bootstrap.min.css" />
+    <Content Include="Styles\bootstrap2-toggle.css" />
+    <Content Include="Styles\bootstrap2-toggle.min.css" />
+    <Content Include="Styles\button.css" />
+    <Content Include="Styles\chosen.css" />
+    <Content Include="Styles\chosenforInList.css" />
+    <Content Include="Styles\chosenforSupply.css" />
+    <Content Include="Styles\Common.css" />
+    <Content Include="Styles\datepicker.css" />
+    <Content Include="Styles\demo.css" />
+    <Content Include="Styles\edit.css" />
+    <Content Include="Styles\font-awesome.css" />
+    <Content Include="Styles\footable.css" />
+    <Content Include="Styles\Form.css" />
+    <Content Include="Styles\img\minus.png" />
+    <Content Include="Styles\img\plus.png" />
+    <Content Include="Styles\jquery.datepick.css" />
+    <Content Include="Styles\magic-check.css" />
+    <Content Include="Styles\magic-check.min.css" />
+    <Content Include="Styles\Noti.css" />
+    <Content Include="Styles\Bootstrap.css" />
+    <Content Include="Styles\Login.css" />
+    <Content Include="Styles\notidrop.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Styles\style.css" />
+    <Content Include="Supplementary_Control\Supplementary_Control.aspx" />
+    <Content Include="Supplementary_Control\Supplementary_Control_Entry.aspx" />
+    <Content Include="Supplementary_Control\Test.aspx" />
+    <Content Include="TestCalendar\css\flora.datepick.css" />
+    <Content Include="TestCalendar\css\humanity.datepick.css" />
+    <Content Include="TestCalendar\css\jquery.datepick.css" />
+    <Content Include="TestCalendar\css\redmond.datepick.css" />
+    <Content Include="TestCalendar\css\smoothness.datepick.css" />
+    <Content Include="TestCalendar\css\ui-black-tie.datepick.css" />
+    <Content Include="TestCalendar\css\ui-blitzer.datepick.css" />
+    <Content Include="TestCalendar\css\ui-cupertino.datepick.css" />
+    <Content Include="TestCalendar\css\ui-dark-hive.datepick.css" />
+    <Content Include="TestCalendar\css\ui-dot-luv.datepick.css" />
+    <Content Include="TestCalendar\css\ui-eggplant.datepick.css" />
+    <Content Include="TestCalendar\css\ui-excite-bike.datepick.css" />
+    <Content Include="TestCalendar\css\ui-flick.datepick.css" />
+    <Content Include="TestCalendar\css\ui-hot-sneaks.datepick.css" />
+    <Content Include="TestCalendar\css\ui-humanity.datepick.css" />
+    <Content Include="TestCalendar\css\ui-le-frog.datepick.css" />
+    <Content Include="TestCalendar\css\ui-mint-choc.datepick.css" />
+    <Content Include="TestCalendar\css\ui-overcast.datepick.css" />
+    <Content Include="TestCalendar\css\ui-pepper-grinder.datepick.css" />
+    <Content Include="TestCalendar\css\ui-redmond.datepick.css" />
+    <Content Include="TestCalendar\css\ui-smoothness.datepick.css" />
+    <Content Include="TestCalendar\css\ui-south-street.datepick.css" />
+    <Content Include="TestCalendar\css\ui-start.datepick.css" />
+    <Content Include="TestCalendar\css\ui-sunny.datepick.css" />
+    <Content Include="TestCalendar\css\ui-swanky-purse.datepick.css" />
+    <Content Include="TestCalendar\css\ui-trontastic.datepick.css" />
+    <Content Include="TestCalendar\css\ui-ui-darkness.datepick.css" />
+    <Content Include="TestCalendar\css\ui-ui-lightness.datepick.css" />
+    <Content Include="TestCalendar\css\ui-vader.datepick.css" />
+    <Content Include="TestCalendar\css\ui.datepick.css" />
+    <Content Include="TestCalendar\img\calendar-blue.gif" />
+    <Content Include="TestCalendar\img\calendar-green.gif" />
+    <Content Include="TestCalendar\img\calendar.gif" />
+    <Content Include="TestCalendar\js\jquery.datepick-af.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-am.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-ar-DZ.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-ar-EG.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-ar.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-az.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-bg.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-bs.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-ca.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-cs.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-da.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-de-CH.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-de.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-el.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-en-AU.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-en-GB.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-en-NZ.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-eo.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-es-AR.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-es-PE.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-es.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-et.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-eu.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-fa.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-fi.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-fo.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-fr-CH.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-fr.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-gl.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-gu.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-he.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-hi-IN.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-hi.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-hr.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-hu.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-hy.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-id.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-is.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-it.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-ja.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-ka.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-km.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-ko.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-lt.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-lv.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-me-ME.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-me.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-mk.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-ml.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-ms.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-mt.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-nl-BE.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-nl.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-no.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-pl.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-pt-BR.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-pt.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-rm.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-ro.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-ru.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-sk.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-sl.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-sq.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-sr-SR.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-sr.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-sv.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-ta.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-th.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-tr.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-tt.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-uk.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-ur.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-vi.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-zh-CN.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-zh-HK.js" />
+    <Content Include="TestCalendar\js\jquery.datepick-zh-TW.js" />
+    <Content Include="TestCalendar\js\jquery.datepick.ext.js" />
+    <Content Include="TestCalendar\js\jquery.datepick.ext.min.js" />
+    <Content Include="TestCalendar\js\jquery.datepick.js" />
+    <Content Include="TestCalendar\js\jquery.datepick.lang.js" />
+    <Content Include="TestCalendar\js\jquery.datepick.lang.min.js" />
+    <Content Include="TestCalendar\js\jquery.datepick.min.js" />
+    <Content Include="TestCalendar\js\jquery.datepick.validation.js" />
+    <Content Include="TestCalendar\js\jquery.datepick.validation.min.js" />
+    <Content Include="TestCalendar\js\jquery.plugin.js" />
+    <Content Include="TestCalendar\js\jquery.plugin.min.js" />
+    <Content Include="Users\DecryptPassword.aspx" />
+    <Content Include="Users\dpicker.aspx" />
+    <Content Include="Users\IntegerBox.aspx" />
+    <Content Include="Users\UserEntry.aspx" />
+    <Content Include="Users\UserList.aspx" />
+    <Content Include="Users\UserMenu.aspx" />
+    <Content Include="Users\User_List.aspx" />
+    <Content Include="Users\Users_Entry.aspx" />
+    <Content Include="Users\User_Menu.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="wucCalendar.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BigMap.aspx.cs">
+      <DependentUpon>BigMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BigMap.aspx.designer.cs">
+      <DependentUpon>BigMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chat.aspx.cs">
+      <DependentUpon>Chat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chat.aspx.designer.cs">
+      <DependentUpon>Chat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checking_Log.aspx.cs">
+      <DependentUpon>Checking_Log.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checking_Log.aspx.designer.cs">
+      <DependentUpon>Checking_Log.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard3.aspx.cs">
+      <DependentUpon>Dashboard3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard3.aspx.designer.cs">
+      <DependentUpon>Dashboard3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dash_board.aspx.cs">
+      <DependentUpon>Dash_board.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dash_board.aspx.designer.cs">
+      <DependentUpon>Dash_board.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatePicker.ascx.cs">
+      <DependentUpon>DatePicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatePicker.ascx.designer.cs">
+      <DependentUpon>DatePicker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DatePickerChange.ascx.cs">
+      <DependentUpon>DatePickerChange.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatePickerChange.ascx.designer.cs">
+      <DependentUpon>DatePickerChange.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DatePickerStage.aspx.cs">
+      <DependentUpon>DatePickerStage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatePickerStage.aspx.designer.cs">
+      <DependentUpon>DatePickerStage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Datepicker_Test.aspx.cs">
+      <DependentUpon>Datepicker_Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Datepicker_Test.aspx.designer.cs">
+      <DependentUpon>Datepicker_Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error_check.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Instructions\Dev_Spc.aspx.cs">
+      <DependentUpon>Dev_Spc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instructions\Dev_Spc.aspx.designer.cs">
+      <DependentUpon>Dev_Spc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Instructions\Instructions.aspx.cs">
+      <DependentUpon>Instructions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instructions\Instructions.aspx.designer.cs">
+      <DependentUpon>Instructions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Instructions\Instruction_List.aspx.cs">
+      <DependentUpon>Instruction_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instructions\Instruction_List.aspx.designer.cs">
+      <DependentUpon>Instruction_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Instructions\Smart_Spc.aspx.cs">
+      <DependentUpon>Smart_Spc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instructions\Smart_Spc.aspx.designer.cs">
+      <DependentUpon>Smart_Spc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Instructions\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instructions\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IntegerTextbox.ascx.cs">
+      <DependentUpon>IntegerTextbox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IntegerTextbox.ascx.designer.cs">
+      <DependentUpon>IntegerTextbox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JQuery_DatePicker.ascx.cs">
+      <DependentUpon>JQuery_DatePicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQuery_DatePicker.ascx.designer.cs">
+      <DependentUpon>JQuery_DatePicker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\login_testing.aspx.cs">
+      <DependentUpon>login_testing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\login_testing.aspx.designer.cs">
+      <DependentUpon>login_testing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MDManagement\MDManagement.aspx.cs">
+      <DependentUpon>MDManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MDManagement\MDManagement.aspx.designer.cs">
+      <DependentUpon>MDManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MDManagement\MDManagement_Entry.aspx.cs">
+      <DependentUpon>MDManagement_Entry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MDManagement\MDManagement_Entry.aspx.designer.cs">
+      <DependentUpon>MDManagement_Entry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_Table.aspx.cs">
+      <DependentUpon>Mobile_Table.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_Table.aspx.designer.cs">
+      <DependentUpon>Mobile_Table.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_Template.aspx.cs">
+      <DependentUpon>Mobile_Template.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_Template.aspx.designer.cs">
+      <DependentUpon>Mobile_Template.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="msg.aspx.cs">
+      <DependentUpon>msg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="msg.aspx.designer.cs">
+      <DependentUpon>msg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Retrieving_Users.aspx.cs">
+      <DependentUpon>Retrieving_Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retrieving_Users.aspx.designer.cs">
+      <DependentUpon>Retrieving_Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalePrice.Master.cs">
+      <DependentUpon>SalePrice.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalePrice.Master.designer.cs">
+      <DependentUpon>SalePrice.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SalePriceMaster.Master.cs">
+      <DependentUpon>SalePriceMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalePriceMaster.Master.designer.cs">
+      <DependentUpon>SalePriceMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Salesmenus.aspx.cs">
+      <DependentUpon>Salesmenus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Salesmenus.aspx.designer.cs">
+      <DependentUpon>Salesmenus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesPrice\Connection.cs" />
+    <Compile Include="SalesPrice\SalePriceChange.aspx.cs">
+      <DependentUpon>SalePriceChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesPrice\SalePriceChange.aspx.designer.cs">
+      <DependentUpon>SalePriceChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesPrice\SalesPriceChange.aspx.cs">
+      <DependentUpon>SalesPriceChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesPrice\SalesPriceChange.aspx.designer.cs">
+      <DependentUpon>SalesPriceChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesPrice\SalesPrice_Change.aspx.cs">
+      <DependentUpon>SalesPrice_Change.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesPrice\SalesPrice_Change.aspx.designer.cs">
+      <DependentUpon>SalesPrice_Change.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesPrice\SalesPrice_Entry.aspx.cs">
+      <DependentUpon>SalesPrice_Entry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesPrice\SalesPrice_Entry.aspx.designer.cs">
+      <DependentUpon>SalesPrice_Entry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesPrice\SalesPrice_List.aspx.cs">
+      <DependentUpon>SalesPrice_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesPrice\SalesPrice_List.aspx.designer.cs">
+      <DependentUpon>SalesPrice_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesPrice\StagesSetting.aspx.cs">
+      <DependentUpon>StagesSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesPrice\StagesSetting.aspx.designer.cs">
+      <DependentUpon>StagesSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesPrice\Stage_Setting.aspx.cs">
+      <DependentUpon>Stage_Setting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesPrice\Stage_Setting.aspx.designer.cs">
+      <DependentUpon>Stage_Setting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesPrice\SalePriceList.aspx.cs">
+      <DependentUpon>SalePriceList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesPrice\SalePriceList.aspx.designer.cs">
+      <DependentUpon>SalePriceList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\ApplyType_Entry.aspx.cs">
+      <DependentUpon>ApplyType_Entry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\ApplyType_Entry.aspx.designer.cs">
+      <DependentUpon>ApplyType_Entry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\Brand_Entry.aspx.cs">
+      <DependentUpon>Brand_Entry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\Brand_Entry.aspx.designer.cs">
+      <DependentUpon>Brand_Entry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\Category_Entry.aspx.cs">
+      <DependentUpon>Category_Entry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\Category_Entry.aspx.designer.cs">
+      <DependentUpon>Category_Entry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\Cost_Unit.aspx.cs">
+      <DependentUpon>Cost_Unit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\Cost_Unit.aspx.designer.cs">
+      <DependentUpon>Cost_Unit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\Inventory_Type.aspx.cs">
+      <DependentUpon>Inventory_Type.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\Inventory_Type.aspx.designer.cs">
+      <DependentUpon>Inventory_Type.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\Selling_Price Unit.aspx.cs">
+      <DependentUpon>Selling_Price Unit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\Selling_Price Unit.aspx.designer.cs">
+      <DependentUpon>Selling_Price Unit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\SpecialPrice_Type_Entry.aspx.cs">
+      <DependentUpon>SpecialPrice_Type_Entry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\SpecialPrice_Type_Entry.aspx.designer.cs">
+      <DependentUpon>SpecialPrice_Type_Entry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\Suppliers_Entry.aspx.cs">
+      <DependentUpon>Suppliers_Entry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\Suppliers_Entry.aspx.designer.cs">
+      <DependentUpon>Suppliers_Entry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\Users_Entry.aspx.cs">
+      <DependentUpon>Users_Entry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\Users_Entry.aspx.designer.cs">
+      <DependentUpon>Users_Entry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\Users_List.aspx.cs">
+      <DependentUpon>Users_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\Users_List.aspx.designer.cs">
+      <DependentUpon>Users_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Supplementary_Control\Supplementary_Control.aspx.cs">
+      <DependentUpon>Supplementary_Control.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplementary_Control\Supplementary_Control.aspx.designer.cs">
+      <DependentUpon>Supplementary_Control.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplementary_Control\Supplementary_Control_Entry.aspx.cs">
+      <DependentUpon>Supplementary_Control_Entry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplementary_Control\Supplementary_Control_Entry.aspx.designer.cs">
+      <DependentUpon>Supplementary_Control_Entry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplementary_Control\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplementary_Control\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\DecryptPassword.aspx.cs">
+      <DependentUpon>DecryptPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\DecryptPassword.aspx.designer.cs">
+      <DependentUpon>DecryptPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\dpicker.aspx.cs">
+      <DependentUpon>dpicker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\dpicker.aspx.designer.cs">
+      <DependentUpon>dpicker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\IntegerBox.aspx.cs">
+      <DependentUpon>IntegerBox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\IntegerBox.aspx.designer.cs">
+      <DependentUpon>IntegerBox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UserEntry.aspx.cs">
+      <DependentUpon>UserEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\UserEntry.aspx.designer.cs">
+      <DependentUpon>UserEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UserMenu.aspx.cs">
+      <DependentUpon>UserMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\UserMenu.aspx.designer.cs">
+      <DependentUpon>UserMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\User_List.aspx.cs">
+      <DependentUpon>User_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\User_List.aspx.designer.cs">
+      <DependentUpon>User_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Users_Entry.aspx.cs">
+      <DependentUpon>Users_Entry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\Users_Entry.aspx.designer.cs">
+      <DependentUpon>Users_Entry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\User_Menu.aspx.cs">
+      <DependentUpon>User_Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\User_Menu.aspx.designer.cs">
+      <DependentUpon>User_Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wucCalendar.ascx.cs">
+      <DependentUpon>wucCalendar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wucCalendar.ascx.designer.cs">
+      <DependentUpon>wucCalendar.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Import\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SalesPriceChange_BL\SalesPriceChange_BL.csproj">
+      <Project>{788FA8FF-1EA2-4F21-A375-CAA97CFC941B}</Project>
+      <Name>SalesPriceChange_BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SalesPriceChange_Common\SalesPriceChange_Common.csproj">
+      <Project>{ACFD4FCA-7DA3-4233-9E27-3A1A45995F3A}</Project>
+      <Name>SalesPriceChange_Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SalesPriceChange_DL\SalesPriceChange_DL.csproj">
+      <Project>{69aa0621-e64e-428e-a2fa-36adb92f6a53}</Project>
+      <Name>SalesPriceChange_DL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SalePrice.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dtd\xhtml1-transitional.dtd" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="SalePriceMaster.Master" />
+    <Content Include="TestCalendar\js\jquery.datepick.ext.min.map" />
+    <Content Include="TestCalendar\js\jquery.datepick.lang.min.map" />
+    <Content Include="TestCalendar\js\jquery.datepick.min.map" />
+    <Content Include="TestCalendar\js\jquery.datepick.validation.min.map" />
+    <Content Include="TestCalendar\js\jquery.plugin.min.map" />
+    <Content Include="packages.config" />
+    <Content Include="Scripts\jquery-3.2.1.min.map" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\ptk.pubxml" />
+    <None Include="Properties\PublishProfiles\SPC IE Test.pubxml" />
+    <None Include="Properties\PublishProfiles\SPC_110.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>12616</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

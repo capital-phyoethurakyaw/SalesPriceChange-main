@@ -1,0 +1,37 @@
+﻿
+.navbar-inverse {
+    background-color:#873030 !important ;
+}
+.dropdown-menu {
+    background-color:#873030 !important;
+}
+    .dropdown-menu > li,  .dropdown-menu > li>a,.navbar-inverse .navbar-nav > .open > a{
+        background-color:#873030 !important;
+    }
+      .dropdown-menu > li,  .dropdown-menu > li>a{
+        background-color:#873030 !important;
+    }
+      /*for Menu*/
+.panel-info > .panel-heading{
+   background-color: #441578 !important;
+}
+.header_dashboard,.ckmdiv {
+     background-color: #441578 !important;
+     color:white;
+}
+/* For Header and footer  For ---DshBoard*/
+.panel-default > .panel-heading,.panel-heading {
+    color:white !important;
+ background-color:   #441578 !important;
+}
+.ckmdivsett {
+     color:black;
+}
+/* For Header and footer  For ---Instruction List*/
+.label-black {
+    background-color: #441578 !important;
+}
+/* For Header and footer  For ---Instruction Label*/
+.datetimepicker {
+        background-color: #441578 !important;
+}

@@ -1,0 +1,25 @@
+﻿/* File Created: 2月 8, 2017 */
+
+.main_form_border
+{
+    margin:0 auto;
+    border:solid 2px gray;
+    width:350px; 
+    border-radius:8px; 
+    padding:0px 10px 10px 10px;
+    margin-top:50px;
+    box-shadow:0px 0px 5px gray;
+}
+
+.admin_title
+{
+    color:#373536;
+    font-weight:bold;
+    font-size:25px;
+    text-align:center;  
+}
+
+login_btn
+{
+    margin-top:15px !important;    
+}
